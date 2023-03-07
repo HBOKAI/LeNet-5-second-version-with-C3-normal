@@ -69,6 +69,6 @@ print("Test Accuracy: ",score[1])
 result = model.predict(test_x[0:9])
 print('前9筆預測結果: ',np.argmax(result, axis=-1),'\n')
 print('前9筆實際值: ',np.argmax(test_y[0:9],axis=-1),'\n')
-model.save('./CNN_MODEL.h5') # CNN_MODEL.h5
-model.save('./CNN_MODEL')
+# model.save('./CNN_MODEL.h5') # CNN_MODEL.h5
+model.save('./CNN_MODEL_40_0.3_0.5_0.5')
 plt.show()
