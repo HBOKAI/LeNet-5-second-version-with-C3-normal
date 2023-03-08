@@ -16,4 +16,4 @@ activation funtion 有改為 relu</br>
 雖然在加入後實際手寫辨識的準確度大幅提高，但在training accuracy與validation accuracy 卻出現了奇怪的現象。validation accuracy為 9X%而training accuracy卻只有7X%
 </br>
 
-<img src='./images/accuracy.png' style="width:400px">
+<img src='./images/accuracy_40_0.3_0.5_0.5.png' style="width:400px">

@@ -54,13 +54,7 @@ model.compile(loss="categorical_crossentropy",optimizer=tf.keras.optimizers.Adam
 # history = model.fit(x=train_x,y=train_y,batch_size=32,epochs=16,verbose=1,validation_split=0.1) # 設定 batch(批), epochs(跌代), verbose, validation(驗證，功能還不太確定)
 history = model.fit_generator(datagen.flow(train_x,train_y,batch_size=32),steps_per_epoch=len(train_x)/32,epochs=16,validation_data=(test_x,test_y))
 
-plt.plot(history.history['accuracy'], label='accuracy')
-plt.plot(history.history['val_accuracy'], label = 'val_accuracy')
-plt.xlabel('Epoch')
-plt.ylabel('Accuracy')
-plt.grid(True)
-# plt.ylim([0.5, 1])
-plt.legend(loc='lower right')
+
 
 score = model.evaluate(test_x,test_y) #評估誤差
 print("Test Loss: " ,score[0])
@@ -71,4 +65,21 @@ print('前9筆預測結果: ',np.argmax(result, axis=-1),'\n')
 print('前9筆實際值: ',np.argmax(test_y[0:9],axis=-1),'\n')
 # model.save('./CNN_MODEL.h5') # CNN_MODEL.h5
 model.save('./CNN_MODEL_40_0.3_0.5_0.5')
+
+plt.plot(history.history['accuracy'], label='accuracy')
+plt.plot(history.history['val_accuracy'], label = 'val_accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.grid(True)
+# plt.ylim([0.5, 1])
+plt.legend(loc='lower right')
+plt.show()
+
+plt.plot(history.history['loss'], label='loss')
+plt.plot(history.history['val_loss'], label = 'val_loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.grid(True)
+# plt.ylim([0.5, 1])
+plt.legend(loc='lower right')
 plt.show()

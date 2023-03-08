@@ -20,7 +20,7 @@ def show_xy(event,x,y,flags,param):
             cv2.line(draw,(x1,y1),(x2,y2),(255,255,255),20)  # 畫直線
         cv2.imshow('img', draw)#draw
 
-model = tf.keras.models.load_model("./CNN_MODEL") # tt/.h5
+model = tf.keras.models.load_model("./CNN_MODEL_40_0.3_0.5_0.5") # tt/.h5
 # img = Image.open("D:/Desktop/學校/實驗室/程式/TENSORFLOW/MNIST數據/test_images/6/6.5.jpg")
 
 
